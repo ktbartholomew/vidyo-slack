@@ -48,8 +48,7 @@ router.all('/', function (req, res) {
             
         })
         .then(function (result) {
-            console.log(result);
-            return res.send('Vidyo invite sent.');
+            return res.status(200).end();
         });
     });
 });
