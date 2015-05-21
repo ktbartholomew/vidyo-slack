@@ -13,11 +13,13 @@ router.all('/', function (req, res) {
 
     if(_.startsWith(req.data.text, 'set')) {
 
-        var vidyoUrl = req.data.text.match(/^set ([^\ ]+)/)[1] || '';
+        var urlMatch = req.data.text.match(/^set ([^\ ]+)/);
 
-        if(!vidyoUrl) {
+        if(!urlMatch) {
             return res.send('Sorry, I couldn\'t determine your URL from what you typed.')
         }
+
+        var vidyoUrl = urlMatch[1];
         
         StorageService.setUrl({
             userId: req.data.user_id,
