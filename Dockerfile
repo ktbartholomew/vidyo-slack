@@ -12,7 +12,4 @@ RUN npm install
 
 EXPOSE 3000
 
-ENV NODE_PORT 3000
-ENV WEBHOOK_TOKEN 1iphcGiDTuHxndFIJpPPYuYL
-
 CMD ["nodejs", "index.js"]
